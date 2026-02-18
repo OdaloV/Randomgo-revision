@@ -83,8 +83,7 @@ func main() {
 	for {
 		fmt.Print("Enter your phone number 10 -15 digits :")
 		PhoneInput, _ := reader.ReadString('\n')
-		PhoneInput = strings.TrimSpace(PhoneInput)
-
+		PhoneInput = strings.TrimSpace(PhoneInput
 		if PhoneInput == "" {
 			fmt.Println("Phone number cannot be empty")
 			continue
@@ -143,4 +142,12 @@ func main() {
 	fmt.Printf("Age: %d\n", age)
 	fmt.Printf("Email: %s\n", email)
 	fmt.Printf("Phone: %s\n", Phonenumber)
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(currentUser)
+	})
+	
+	http.ListenAndServe(":8080", nil)
+
 }
