@@ -1,0 +1,28 @@
+package main
+
+// Fields:
+// Member ID (string, format: "LIB" followed by 4 digits, e.g., "LIB1234")
+// Full Name (string, at least 2 words)
+// Age (integer, minimum 5 years, maximum 100 years)
+// Member Type (string, must be one of: "Student", "Teacher", "Senior", "Regular")
+// Borrowed Books (integer, 0-10)
+// Email (valid email format)
+// Validation Rules:
+// Member ID must start with "LIB" and have exactly 4 digits after
+// Name must have first and last name
+// Age must be between 5 and 100
+// Member Type must be from the list
+// Borrowed books must be 0-10
+// Email must contain @ and . after @
+
+
+
+import (
+    "fmt"
+    //"os"
+)
+
+func memid() string{
+fmt.Print("Enter your user ID")
+
+}
